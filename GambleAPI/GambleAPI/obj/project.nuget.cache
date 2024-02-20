@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "dQ/ruYZqcMVSK3/szpTiZ4UIfnbkvz6pBaPFryKG4xrrVJTL2LkLUmiGOrpUYyv6+mjr5T1+dDI1rGVa6mx+7Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\MRathod\\Projects\\dotnet-gambling-api\\GambleAPI\\GambleAPI\\GambleAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\MRathod\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\MRathod\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\MRathod\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.5\\microsoft.visualstudio.azure.containers.tools.targets.1.19.5.nupkg.sha512",
+    "C:\\Users\\MRathod\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "C:\\Users\\MRathod\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "C:\\Users\\MRathod\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "C:\\Users\\MRathod\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}

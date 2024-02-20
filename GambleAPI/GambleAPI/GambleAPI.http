@@ -1,0 +1,6 @@
+@GambleAPI_HostAddress = http://localhost:5231
+
+GET {{GambleAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
