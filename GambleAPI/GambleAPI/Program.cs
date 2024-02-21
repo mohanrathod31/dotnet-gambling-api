@@ -1,6 +1,10 @@
+using GambleAPI.Middleware;
+using GambleAPI.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Registering PlayerRepository.
+builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -19,6 +23,9 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+//Registering Middleware
+app.UseMiddleware<ErrorHandlingMiddleware>();
 
 app.MapControllers();
 
