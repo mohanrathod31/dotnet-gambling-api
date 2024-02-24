@@ -1,4 +1,4 @@
-﻿namespace GambleAPI.Models
+﻿namespace GambleAPI.GambleAPI.Domain.Models
 {
     public class Player
     {
