@@ -5,7 +5,11 @@ C:\Users\MRathod\Projects\dotnet-gambling-api\GambleAPI\GambleAPI\bin\Debug\net8
 C:\Users\MRathod\Projects\dotnet-gambling-api\GambleAPI\GambleAPI\bin\Debug\net8.0\GambleAPI.runtimeconfig.json
 C:\Users\MRathod\Projects\dotnet-gambling-api\GambleAPI\GambleAPI\bin\Debug\net8.0\GambleAPI.dll
 C:\Users\MRathod\Projects\dotnet-gambling-api\GambleAPI\GambleAPI\bin\Debug\net8.0\GambleAPI.pdb
+C:\Users\MRathod\Projects\dotnet-gambling-api\GambleAPI\GambleAPI\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\MRathod\Projects\dotnet-gambling-api\GambleAPI\GambleAPI\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\MRathod\Projects\dotnet-gambling-api\GambleAPI\GambleAPI\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Users\MRathod\Projects\dotnet-gambling-api\GambleAPI\GambleAPI\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\MRathod\Projects\dotnet-gambling-api\GambleAPI\GambleAPI\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\MRathod\Projects\dotnet-gambling-api\GambleAPI\GambleAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\MRathod\Projects\dotnet-gambling-api\GambleAPI\GambleAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\MRathod\Projects\dotnet-gambling-api\GambleAPI\GambleAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
