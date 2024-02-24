@@ -1,7 +1,8 @@
 using GambleAPI.GambleAPI.Application.Services;
+using GambleAPI.GambleAPI.Infrastructure.Data;
 using GambleAPI.GambleAPI.Infrastructure.Repositories;
-using GambleAPI.Middleware;
 using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,10 @@ builder.Services.AddScoped<IRandomNumberGenerator, RandomNumberGenerator>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<GambleDbContext>(options => 
+options.UseInMemoryDatabase(builder.Configuration.GetConnectionString("GambleDb"))
+);
 
 var app = builder.Build();
 

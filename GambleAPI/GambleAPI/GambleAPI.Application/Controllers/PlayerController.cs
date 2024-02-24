@@ -2,6 +2,7 @@
 using GambleAPI.GambleAPI.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace GambleAPI.GambleAPI.Application.Controllers
 {
@@ -16,6 +17,12 @@ namespace GambleAPI.GambleAPI.Application.Controllers
             _playerRepository = playerRepository;
         }
 
+        [HttpGet]
+        public async Task<IEnumerable<Player>> GetAllPlayers()
+        {
+            return await _playerRepository.GetAllPlayers();
+        }
+
         [HttpPost]
         public IActionResult AddPlayer([FromBody] Player player)
         {
@@ -24,9 +31,12 @@ namespace GambleAPI.GambleAPI.Application.Controllers
                 return BadRequest(ModelState);
             }
 
-            _playerRepository.Add(player);
+            _playerRepository.AddPlayer(player);
+
             return Ok(player);
         }
+
+
 
         [HttpGet("{id}")]
         public IActionResult GetPlayer(Guid id)
@@ -39,23 +49,7 @@ namespace GambleAPI.GambleAPI.Application.Controllers
             return Ok(player);
         }
 
-        [HttpGet("username/{username}")]
-        public IActionResult GetPlayerByUsername(string username)
-        {
-            var player = _playerRepository.GetByUsername(username);
-            if (player == null)
-            {
-                return NotFound($"Player with username {username} not found.");
-            }
-            return Ok(player);
-        }
 
-        [HttpGet]
-        public IActionResult GetAllPlayers()
-        {
-            var players = _playerRepository.GetAll();
-            return Ok(players);
-        }
 
         [HttpPut]
         public IActionResult UpdatePlayer([FromBody] Player player)
@@ -65,12 +59,6 @@ namespace GambleAPI.GambleAPI.Application.Controllers
                 return BadRequest(ModelState);
             }
 
-            var existingPlayer = _playerRepository.GetPlayerById(player.Id);
-            if (existingPlayer == null)
-            {
-                return NotFound($"Player with ID {player.Id} not found.");
-            }
-
             _playerRepository.UpdatePlayer(player);
             return Ok(player);
         }
@@ -78,16 +66,8 @@ namespace GambleAPI.GambleAPI.Application.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeletePlayer(Guid id)
         {
-            var player = _playerRepository.GetPlayerById(id);
-            if (player == null)
-            {
-                return NotFound($"Player with ID {id} not found.");
-            }
-
-            _playerRepository.Delete(id);
+            _playerRepository.DeletePlayer(id);
             return Ok();
         }
-
-
     }
 }

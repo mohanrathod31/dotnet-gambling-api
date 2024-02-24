@@ -1,51 +1,71 @@
-﻿using GambleAPI.GambleAPI.Domain.Models;
+﻿using GambleAPI.Exceptions;
+using GambleAPI.GambleAPI.Domain.Models;
+using GambleAPI.GambleAPI.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace GambleAPI.GambleAPI.Infrastructure.Repositories
 {
     public class PlayerRepository : IPlayerRepository
     {
+        public readonly GambleDbContext _dbContext;
         private readonly List<Player> _players = new List<Player>();
-        private int _nextId = 1; // Assuming an auto-incrementing ID for simplicity
 
-        public PlayerRepository()
+        public PlayerRepository(GambleDbContext dbContext)
         {
-            // Adding sample player records during initialization
-            AddPlayer(new Player { Id = Guid.Parse("11111111-1111-1111-1111-111111111111"), Username = "player1", Points = 10000 });
-            AddPlayer(new Player { Id = Guid.Parse("22222222-2222-2222-2222-222222222222"), Username = "player2", Points = 50 });
+            _dbContext = dbContext;
         }
 
-        public IEnumerable<Player> GetAllPlayers()
+        public async Task<IEnumerable<Player>> GetAllPlayers()
         {
-            return _players;
+            return await _dbContext.players.ToListAsync();
         }
 
         public Player GetPlayerById(Guid id)
         {
-            return _players.FirstOrDefault(p => p.Id == id && p.Points >= 1 && p.Points <= 10000);
+            return _dbContext.players.FirstOrDefault(p => p.Id == id);
         }
 
-        public void AddPlayer(Player player)
+        public Player AddPlayer(Player player)
         {
-            _players.Add(player);
+            var playerObj = new Player()
+            {
+                Id = player.Id,
+                Username = player.Username,
+                Points = player.Points,
+            };
+
+            _dbContext.players.Add(playerObj);
+            _dbContext.SaveChanges();
+            return playerObj;
+ 
         }
 
         public void UpdatePlayer(Player player)
         {
-            var existingPlayer = _players.FirstOrDefault(p => p.Id == player.Id);
+            var existingPlayer = _dbContext.players.FirstOrDefault(p => p.Id == player.Id);
             if (existingPlayer != null)
             {
                 existingPlayer.Username = player.Username;
                 existingPlayer.Points = player.Points;
+                _dbContext.SaveChanges();
             }
             else
             {
-                throw new ArgumentException("Player not found");
+                throw new PlayerNotFoundException("Player not found.");
             }
         }
 
         public void DeletePlayer(Guid id)
         {
-            _players.RemoveAll(p => p.Id == id);
+            var player = _dbContext.players.FirstOrDefault(p => p.Id == id);
+            if (player == null)
+            {
+                throw new PlayerNotFoundException("Player not found.");
+            }
+
+            _dbContext.Remove(player);
+            _dbContext.SaveChanges();
+
         }
     }
 }
