@@ -11,7 +11,7 @@ dotnet-gambling-api is a .NET-based project that provides a API for gambling act
 - Player History etc.
 - making it suitable for various gambling applications such as casinos, sports betting platforms, or lottery services.
 
-The key components of the dotnet-gambling-api project:
+**The key components of the dotnet-gambling-api project:**
 
 ##Followed Domain Driven Design(DDD)
 
