@@ -43,7 +43,7 @@ dotnet-gambling-api is a .NET-based project that provides a API for gambling act
 ## Getting Started
 To use dotnet-gambling-api in your project, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/dotnet-gambling-api.git`
+1. Clone the repository: `git clone https://github.com/mohanrathod31/dotnet-gambling-api.git`
 2. Navigate to the project directory: `cd dotnet-gambling-api`
 3. Build and run the project: `dotnet run`
 
