@@ -38,7 +38,10 @@ dotnet-gambling-api is a .NET-based project that provides a API for gambling act
 
 ## Followed Exception Handling and Data Validation as well.
 
-
+## Technologies used.
+   - .NET 8
+   - EntityFramework Core 8.2
+   - Visual Studio 2022
 
 ## Getting Started
 To use dotnet-gambling-api in your project, follow these steps:
