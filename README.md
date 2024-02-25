@@ -1,13 +1,15 @@
 # dotnet-gambling-api
 
 ## Overview
-dotnet-gambling-api is a .NET-based project that provides a versatile API for gambling-related activities. This API offers endpoints for placing bets, managing player accounts, and accessing game data, making it suitable for various gambling applications such as casinos, sports betting platforms, or lottery services.
-
+dotnet-gambling-api is a .NET-based project that provides a API for gambling activitity. This API offers endpoints for placing bets and managing player accounts.
 ## Features
 - Betting: Allow users to place bets on gambling game.
 - Player Management: Manage player accounts, including points balance.
-- Game Data Access: Access game-related data such as results and odds.
 
+## Future feature enhancements
+- Game Data Access: Access game-related data such as results and odds
+- Player History etc.
+- making it suitable for various gambling applications such as casinos, sports betting platforms, or lottery services.
 
 The key components of the dotnet-gambling-api project:
 
