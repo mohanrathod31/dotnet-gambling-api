@@ -54,6 +54,6 @@ When run the API Project from Visual Studio if Visual Studio gives error like
 
 "Your Docker server host is configured for 'Linux', however your project targets 'Windows'."
 
-Please Delete Docker file from the project. Right click On Gampble.API project, add Docker Support and Target OS should be linux.
+Please Delete Docker file from the project Then Right click On Gampble.API project, add Docker Support and Target OS should be linux.
 
-Note: Some time you have uninstall your current Docker Desktop and intall latest docker desktop.
+Note: Some time you need to uninstall your current Docker Desktop and intall latest docker desktop to run the application.
